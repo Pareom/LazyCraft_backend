@@ -1,3 +1,6 @@
 databaseChangeLog:
+  - preConditions:
+      runningAs:
+        username: lazycraft
   - include:
-      file: changelog-01.yml
+      file: db/changelogs/changelog-01.yml
