@@ -1,0 +1,68 @@
+#rename it to changelog-01
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Eckwo
+      changes:
+        - createTable:
+            tableName: item
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+                  constraints:
+                    primaryKey:  false
+                    nullable: false
+              - column:
+                  name: price
+                  type: int
+                  constraints:
+                    primaryKey: false
+                    nullable: true
+              - column:
+                  name: last_update
+                  type: datetime
+                  constraints:
+                    primaryKey:  false
+                    nullable: false
+              - column:
+                  name: image_path
+                  type: varchar(200)
+                  constraints:
+                    primaryKey:  false
+                    nullable: false
+
+        - createTable:
+            tableName: recipe #Ok pour ce nom alors ?
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: result_item_id
+                  type: varchar(50)
+                  constraints:
+                    primaryKey: false
+                    nullable: false
+              - column:
+                  name: source_item_id
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: recipe_number
+                  type: int
+                  constraints:
+                    primaryKey: false
+                    nullable: false
